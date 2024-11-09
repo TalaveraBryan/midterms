@@ -1,4 +1,6 @@
 <?php
+session_start(); // Start the session to store session variables
+
 // Predefined users (email => password)
 $users = [
     'user1@email.com' => 'password1',
@@ -41,6 +43,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $storedPassword = $users[strtolower($email)];
             if ($storedPassword !== $password) {
                 $errorDetails[] = 'Password is incorrect.';
+            } else {
+                // If login is successful, store the user's email in the session
+                $_SESSION['email'] = $email; // Save email in session
+                header('Location: dashboard.php'); // Redirect to dashboard.php
+                exit; // Stop further script execution to prevent page rendering
             }
         } else {
             $errorDetails[] = 'Email not found.';
