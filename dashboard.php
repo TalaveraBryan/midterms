@@ -116,8 +116,8 @@ $userEmail = $_SESSION['email'];
                         <div class="card-divider"></div> <!-- Divider between title and description -->
                         <p class="card-text">This section allows you to register a new student in the system. Click the button below to proceed with the registration process.</p>
                         
-                        <!-- Button that submits the form and redirects to register.php -->
-                        <form action="register.php" method="get">
+                        <!-- Button that submits the form and redirects to student/register.php -->
+                        <form action="student/register.php" method="get">
                             <button type="submit" class="btn btn-primary w-100">Register</button>
                         </form>
                     </div>
