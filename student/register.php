@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         file_put_contents($studentsFile, json_encode($students));
 
         // Success message
-        $successMessage = 'Student added successfully!';
+       // $successMessage = 'Student added successfully!';
     }
 }
 ?>

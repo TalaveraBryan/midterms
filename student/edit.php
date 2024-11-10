@@ -29,7 +29,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 
                 // Save the updated student data back to the file
                 if (file_put_contents($studentsFile, json_encode($students))) {
-                    $_SESSION['success'] = 'Student information updated successfully.';
+                    //$_SESSION['success'] = 'Student information updated successfully.';
                     header("Location: register.php");  // Redirect after successful edit
                     exit();
                 } else {
