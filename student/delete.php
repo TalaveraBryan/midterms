@@ -101,10 +101,12 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
             <button class="btn btn-secondary" onclick="window.location.href='register.php';">Cancel</button>
             
             <!-- Delete Form -->
-            <form action="delete.php?id=<?php echo $deleteId; ?>" method="POST" style="display:inline;">
-                <input type="hidden" name="student_id" value="<?php echo $deleteId; ?>">
-                <button type="submit" class="btn btn-danger">Delete</button> <!-- Changed btn-primary to btn-danger -->
-            </form>
+            <!-- Delete Form -->
+<form action="delete.php?id=<?php echo $deleteId; ?>" method="POST" style="display:inline;">
+    <input type="hidden" name="student_id" value="<?php echo $deleteId; ?>">
+    <button type="submit" class="btn btn-primary">Delete student record</button> <!-- Changed btn-danger to btn-primary -->
+</form>
+
         </div>
     </div>
 </div>
