@@ -1,19 +1,13 @@
 <?php
-session_start();
-
-// Check if the user is already logged in
-if (isset($_SESSION['email'])) {
-    header('Location: dashboard.php');
-    exit; // Stop further script execution
-}
+session_start(); // Start the session to store session variables
 
 // Predefined users (email => password)
 $users = [
-    'user1@email.com' => 'password1',
-    'user2@email.com' => 'password2',
-    'user3@email.com' => 'password3',
-    'user4@email.com' => 'password4',
-    'user5@email.com' => 'password5'
+    'user1@email.com' => 'password1', // password for user1
+    'user2@email.com' => 'password2', // password for user2
+    'user3@email.com' => 'password3', // password for user3
+    'user4@email.com' => 'password4', // password for user4
+    'user5@email.com' => 'password5'  // password for user5
 ];
 
 // Initialize variables
@@ -24,13 +18,13 @@ $loginError = '';
 
 // Handle form submission
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $email = trim($_POST['email']);
+    $email = trim($_POST['email']);  // Trim leading/trailing spaces
     $password = $_POST['password'];
 
     // Validate email
     if (empty($email)) {
         $emailErr = 'Email is required.';
-        $errorDetails[] = $emailErr;
+        $errorDetails[] = $emailErr; // Add error to details array
     } else {
         // Sanitize and validate email format
         $email = filter_var($email, FILTER_SANITIZE_EMAIL);
@@ -43,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Validate password
     if (empty($password)) {
         $passwordErr = 'Password is required.';
-        $errorDetails[] = $passwordErr;
+        $errorDetails[] = $passwordErr; // Add error to details array
     }
 
     // Check if both email and password are provided
@@ -58,9 +52,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $errorDetails[] = 'Password is incorrect.';
             } else {
                 // If login is successful, store the user's email in the session
-                $_SESSION['email'] = $email;
+                $_SESSION['email'] = $email; // Save email in session
                 header('Location: dashboard.php'); // Redirect to dashboard.php
-                exit;
+                exit; // Stop further script execution to prevent page rendering
             }
         } else {
             $errorDetails[] = 'Email not found.';
