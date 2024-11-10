@@ -61,7 +61,10 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 <body>
 
 <div class="container mt-4">
-    <!-- Breadcrumbs -->
+    <!-- Page Title (Left-aligned) -->
+    <h1>Delete a Student</h1>
+
+    <!-- Breadcrumbs (Left-aligned) -->
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="register.php">Dashboard</a></li>
@@ -69,9 +72,6 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
             <li class="breadcrumb-item active" aria-current="page">Delete Student</li>
         </ol>
     </nav>
-
-    <!-- Page Title -->
-    <h1>Delete Student</h1>
 
     <!-- Error or Success Messages -->
     <?php if (isset($_SESSION['success'])): ?>
@@ -103,7 +103,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
             <!-- Delete Form -->
             <form action="delete.php?id=<?php echo $deleteId; ?>" method="POST" style="display:inline;">
                 <input type="hidden" name="student_id" value="<?php echo $deleteId; ?>">
-                <button type="submit" class="btn btn-primary">Delete</button> <!-- Changed btn-danger to btn-primary -->
+                <button type="submit" class="btn btn-danger">Delete</button> <!-- Changed btn-primary to btn-danger -->
             </form>
         </div>
     </div>
