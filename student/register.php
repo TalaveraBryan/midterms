@@ -76,16 +76,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <h3 class="card-title">Register a New Student</h3><br>
 
         <div class="container">
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container-fluid">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="student/dashboard.php">Dashboard</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Registration</li>
-                        </ol>
-                    </nav>
-                </div>
-            </nav>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <!-- Link to subject/dashboard.php, relative path to move out of student folder and into subject folder -->
+                <li class="breadcrumb-item"><a href="../subject/dashboard.php">Dashboard</a></li> 
+                <!-- Current page, Registration -->
+                <li class="breadcrumb-item active" aria-current="page">Registration</li>
+            </ol>
+        </nav>
+    </div>
+</nav>
+
+    </div>
+</nav>
+
+
         </div><br>
 
         <!-- Error or Success Message -->

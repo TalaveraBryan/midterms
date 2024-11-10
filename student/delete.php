@@ -100,7 +100,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
             <!-- Cancel Button -->
             <button class="btn btn-secondary" onclick="window.location.href='register.php';">Cancel</button>
             
-            <!-- Delete Form -->
+          
             <!-- Delete Form -->
 <form action="delete.php?id=<?php echo $deleteId; ?>" method="POST" style="display:inline;">
     <input type="hidden" name="student_id" value="<?php echo $deleteId; ?>">
