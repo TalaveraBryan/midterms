@@ -99,7 +99,11 @@ $userEmail = $_SESSION['email'];
                         <h5 class="card-title">Add a Subject</h5>
                         <div class="card-divider"></div> <!-- Divider between title and description -->
                         <p class="card-text">This section allows you to add a new subject in the system. Click the button below to proceed with the adding process.</p>
-                        <a href="#" class="btn btn-primary">Add Subject</a>
+                        
+                        <!-- Button that submits the form and stays empty for now -->
+                        <form action="" method="get">
+                            <button type="submit" class="btn btn-primary w-100">Add Subject</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -111,7 +115,11 @@ $userEmail = $_SESSION['email'];
                         <h5 class="card-title">Register a Student</h5>
                         <div class="card-divider"></div> <!-- Divider between title and description -->
                         <p class="card-text">This section allows you to register a new student in the system. Click the button below to proceed with the registration process.</p>
-                        <a href="#" class="btn btn-primary">Register</a>
+                        
+                        <!-- Button that submits the form and redirects to student/register.php -->
+                        <form action="student/register.php" method="get">
+                            <button type="submit" class="btn btn-primary w-100">Register</button>
+                        </form>
                     </div>
                 </div>
             </div>
