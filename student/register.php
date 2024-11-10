@@ -61,22 +61,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $successMessage = 'Student added successfully!';
     }
 }
-
-// Handle student deletion
-if (isset($_GET['delete'])) {
-    $deleteId = $_GET['delete'];
-
-    if (isset($students[$deleteId])) {
-        // Delete the student with the given ID
-        unset($students[$deleteId]);
-
-        // Save the updated list to the file
-        file_put_contents($studentsFile, json_encode($students));
-
-        // Success message for deletion
-        $successMessage = "Student with ID {$deleteId} has been deleted.";
-    }
-}
 ?>
 
 <!DOCTYPE html>
@@ -170,8 +154,8 @@ if (isset($_GET['delete'])) {
                                     <td>{$student['firstName']}</td>
                                     <td>{$student['lastName']}</td>
                                     <td>
-                                        <a href='#' class='btn btn-primary btn-sm' onclick='editStudent(\"{$id}\")'>Edit</a>
-                                        <a href='?delete={$id}' class='btn btn-danger btn-sm'>Delete</a>
+                                        <a href='edit.php?id={$id}' class='btn btn-primary btn-sm'>Edit</a>
+                                        <a href='delete.php?id={$id}' class='btn btn-danger btn-sm'>Delete</a>
                                     </td>
                                   </tr>";
                         }
