@@ -1,13 +1,15 @@
 <?php
-session_start();
+session_start(); // Start the session to access session variables
 
-// Check if the user is logged in, if not, redirect them to the login page
+// Check if the user is logged in by checking the session variable
 if (!isset($_SESSION['email'])) {
-    header('Location: index.php');
-    exit; // Stop further script execution
+    // Redirect to login page if user is not logged in
+    header('Location: login.php');
+    exit;
 }
 
-// User is logged in, display the dashboard
+// Get the logged-in user's email
+$userEmail = $_SESSION['email'];
 ?>
 
 <!DOCTYPE html>
@@ -15,25 +17,43 @@ if (!isset($_SESSION['email'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Welcome to the System</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="container d-flex justify-content-center align-items-center min-vh-100">
-        <div class="w-100" style="max-width: 400px;">
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <h3 class="card-title text-center mb-4">Welcome to the Dashboard</h3>
-                    <p class="text-center">You are logged in as <?php echo htmlspecialchars($_SESSION['email']); ?></p>
-                    <div class="text-center">
-                        <a href="logout.php" class="btn btn-danger">Logout</a>
+
+    <div class="container mt-4">
+        <!-- Row for the heading and logout button -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="top text-center">Welcome to the System, <?php echo htmlspecialchars($userEmail); ?>!</h2>
+            <a href="logout.php" class="btn btn-danger">Logout</a>
+        </div>
+
+        <div class="row mt-4">
+            <!-- Card 1: Add a Subject -->
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Add a Subject</h5>
+                        <p class="card-text">This section allows you to add a new subject in the system. Click the button below to proceed with the adding process.</p>
+                        <a href="#" class="btn btn-primary">Add Subject</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Register a Student -->
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Register a Student</h5>
+                        <p class="card-text">This section allows you to register a new student in the system. Click the button below to proceed with the registration process.</p>
+                        <a href="#" class="btn btn-primary">Register</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Bootstrap 5 JS, Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
