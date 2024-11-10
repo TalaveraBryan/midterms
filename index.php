@@ -1,6 +1,13 @@
 <?php
 session_start(); // Start the session to store session variables
 
+// Check if the user is already logged in
+if (isset($_SESSION['email'])) {
+    // If logged in, redirect to dashboard
+    header('Location: dashboard.php');
+    exit;
+}
+
 // Predefined users (email => password)
 $users = [
     'user1@email.com' => 'password1', // password for user1
