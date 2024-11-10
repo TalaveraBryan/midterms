@@ -156,6 +156,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     <td>
                                         <a href='edit.php?id={$id}' class='btn btn-primary btn-sm'>Edit</a>
                                         <a href='delete.php?id={$id}' class='btn btn-danger btn-sm'>Delete</a>
+                                        <button class='btn btn-warning btn-sm' disabled>Attach Subject</button> <!-- Empty button, no link, and disabled -->
                                     </td>
                                   </tr>";
                         }
