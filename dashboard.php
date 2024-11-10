@@ -30,8 +30,9 @@ $userEmail = $_SESSION['email'];
         </div>
 
         <div class="row mt-4">
-            <div class="col-md-6">
-                <div class="card">
+            <!-- Card 1: Add a Subject -->
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm">
                     <div class="card-body">
                         <h5 class="card-title">Add a Subject</h5>
                         <p class="card-text">This section allows you to add a new subject in the system. Click the button below to proceed with the adding process.</p>
@@ -40,8 +41,9 @@ $userEmail = $_SESSION['email'];
                 </div>
             </div>
 
-            <div class="col-md-6">
-                <div class="card">
+            <!-- Card 2: Register a Student -->
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm">
                     <div class="card-body">
                         <h5 class="card-title">Register a Student</h5>
                         <p class="card-text">This section allows you to register a new student in the system. Click the button below to proceed with the registration process.</p>
