@@ -1,14 +1,5 @@
 <?php
-// login.php
-
 session_start(); // Start the session to store session variables
-
-// Check if the user is already logged in
-if (isset($_SESSION['email'])) {
-    // If logged in, redirect to dashboard
-    header('Location: dashboard.php');
-    exit;
-}
 
 // Predefined users (email => password)
 $users = [
@@ -75,6 +66,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $loginError = 'System Errors:';
     }
 }
+?>
 
-// Include the HTML view file
-include 'login_view.php';
+<?php
+//session_start(); // Start the session to access session variables
+
+// Check if the user is logged in by checking the session variable
+if (!isset($_SESSION['email'])) {
+    // Redirect to login page if user is not logged in
+    header('Location: login.php');
+    exit;
+}
+
+// Get the logged-in user's email
+$userEmail = $_SESSION['email'];
+?>
